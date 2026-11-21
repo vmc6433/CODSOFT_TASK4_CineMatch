@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An offline content-based movie recommendation system." />
+    <title>CineMatch - Movie Recommendations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="index.html"><span class="brand-glyph">C</span> CineMatch</a>
+        <p>CONTENT-BASED RECOMMENDATION ENGINE</p>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">CODSOFT AI INTERNSHIP - TASK 4</p>
+        <h1>Find your next <span>great watch.</span></h1>
+        <p class="lede">Tell us what you enjoy. CineMatch connects genres and story tags to uncover similar films.</p>
+      </section>
+
+      <section class="preference-panel" aria-labelledby="preference-title">
+        <div class="panel-heading">
+          <p class="step">01</p>
+          <div><h2 id="preference-title">Build your taste profile</h2><p>Choose one film and any genres you are in the mood for.</p></div>
+        </div>
+
+        <div class="controls-grid">
+          <label class="select-label" for="favorite-select">A film you enjoyed
+            <select id="favorite-select"></select>
+          </label>
+          <fieldset class="genre-fieldset">
+            <legend>Optional genre preferences</legend>
+            <div class="genre-chips" id="genre-chips"></div>
+          </fieldset>
+        </div>
+        <button class="recommend-button" id="recommend-button" type="button"><span>Find recommendations</span><span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="results-header">
+          <div>
+            <p class="eyebrow">02 - YOUR MATCHES</p>
+            <h2 id="results-title">Picked for your profile</h2>
+          </div>
+          <p class="profile-summary" id="profile-summary" aria-live="polite"></p>
+        </div>
+        <div class="recommendations" id="recommendations" aria-live="polite"></div>
+      </section>
+
+      <section class="method-note">
+        <span class="method-icon">✦</span>
+        <div><strong>How CineMatch works</strong><p>Each movie is represented by its genres and story tags. The system compares these feature profiles with cosine similarity, then boosts any genres you select.</p></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
